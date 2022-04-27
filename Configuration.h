@@ -934,7 +934,7 @@
  * Override with M203
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 300, 300, 5, 25 }
+#define DEFAULT_MAX_FEEDRATE          { 100, 100, 5, 25 }
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
@@ -947,7 +947,7 @@
  * Override with M201
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 100, 10000 }
+#define DEFAULT_MAX_ACCELERATION      { 2000, 2000, 500, 10000 }
 
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
@@ -962,9 +962,9 @@
  *   M204 R    Retract Acceleration
  *   M204 T    Travel Acceleration
  */
-#define DEFAULT_ACCELERATION          3000    // X, Y, Z and E acceleration for printing moves
+#define DEFAULT_ACCELERATION          2000    // X, Y, Z and E acceleration for printing moves
 #define DEFAULT_RETRACT_ACCELERATION  3000    // E acceleration for retracts
-#define DEFAULT_TRAVEL_ACCELERATION   3000    // X, Y, Z acceleration for travel (non printing) moves
+#define DEFAULT_TRAVEL_ACCELERATION   2000    // X, Y, Z acceleration for travel (non printing) moves
 
 /**
  * Default Jerk limits (mm/s)
@@ -978,7 +978,7 @@
 #if ENABLED(CLASSIC_JERK)
   #define DEFAULT_XJERK 10.0
   #define DEFAULT_YJERK 10.0
-  #define DEFAULT_ZJERK  0.3
+  #define DEFAULT_ZJERK  0.5
   //#define DEFAULT_IJERK  0.3
   //#define DEFAULT_JJERK  0.3
   //#define DEFAULT_KJERK  0.3
@@ -1014,7 +1014,7 @@
  *
  * See https://github.com/synthetos/TinyG/wiki/Jerk-Controlled-Motion-Explained
  */
-//#define S_CURVE_ACCELERATION
+#define S_CURVE_ACCELERATION//cuidado auot !!!!!
 
 //===========================================================================
 //============================= Z Probe Options =============================
@@ -1070,7 +1070,7 @@
  * A Fix-Mounted Probe either doesn't deploy or needs manual deployment.
  *   (e.g., an inductive probe or a nozzle-based probe-switch.)
  */
-//#define FIX_MOUNTED_PROBE
+#define FIX_MOUNTED_PROBE
 
 /**
  * Use the nozzle as the probe, as with a conductive
@@ -1259,7 +1259,7 @@
 #define Z_CLEARANCE_DEPLOY_PROBE   10 // Z Clearance for Deploy/Stow
 #define Z_CLEARANCE_BETWEEN_PROBES  5 // Z Clearance between probe points
 #define Z_CLEARANCE_MULTI_PROBE     5 // Z Clearance between multiple probes
-//#define Z_AFTER_PROBING           5 // Z position after probing is done
+#define Z_AFTER_PROBING             10 // Z position after probing is done
 
 #define Z_PROBE_LOW_POINT          -2 // Farthest distance below the trigger-point to go before stopping
 
@@ -1387,7 +1387,7 @@
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
-#define Z_MAX_POS 500
+#define Z_MAX_POS 400
 //#define I_MIN_POS 0
 //#define I_MAX_POS 50
 //#define J_MIN_POS 0
